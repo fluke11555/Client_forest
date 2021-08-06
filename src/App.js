@@ -30,7 +30,7 @@ function App() {
 useEffect(()=>{
   const getPins= async ()=>{
     try{
-        const res =await axios.get("/pins");
+        const res =await axios.get("https://project-forest01.herokuapp.com/pins");
         setPins(res.data);
     }catch(err){
         console.log(err);
@@ -63,7 +63,7 @@ const handleMarkerClick=(id,lat,long)=>{
    }
 
    try{
-    const res = await axios.post("/pins", newPin);
+    const res = await axios.post("https://project-forest01.herokuapp.com/pins", newPin);
     setPins([...pins,res.data]);
     setNewPlace(null);
    }catch(err){
